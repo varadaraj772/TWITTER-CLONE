@@ -1,0 +1,29 @@
+.head {
+  text-align: start;
+  font-weight: bolder;
+  font-family: "Segoe UI";
+}
+span {
+  text-align: center;
+}
+a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+.btns {
+  width: 100%;
+  border-radius: 50px;
+}
