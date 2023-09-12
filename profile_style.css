@@ -1,0 +1,118 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.main {
+  margin-bottom: -100px;
+  width: auto;
+  height: 0px;
+  background-color: grey;
+}
+
+.righthead {
+  font-size: 20px;
+  padding-top: -1px;
+  font-weight: 100;
+  padding-left: 1175px;
+}
+.profile {
+  background-color: aliceblue;
+  width: 850px;
+  height: 745px;
+  margin-left: 24%;
+  margin-right: 26%;
+  margin-top: 0px;
+  border: 1px solid rgba(87, 174, 250, 0.3);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+#uppershade {
+  background-color: rgb(29, 155, 240);
+  width: 831px;
+  height: 50px;
+
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.dp #photo {
+  height: 150px;
+  width: 150px;
+  justify-content: center;
+  border-radius: 50%;
+  border: 5px solid rgb(186, 204, 228);
+  margin-top: 25px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+#photo:active {
+  border-radius: 0%;
+  scale: 3;
+  margin-left: 40%;
+  margin-top: 20%;
+  transition: ease-in-out 0.5s;
+}
+#photo:hover .dp {
+  background-color: red;
+}
+.name {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  margin-top: 140px;
+  margin-left: 20px;
+}
+
+.follow {
+  margin-left: 18px;
+  margin-top: 0px;
+  font-size: 14px;
+}
+
+b {
+  font-size: 17px;
+}
+.editbtn {
+  margin-left: 725px;
+  width: 100px;
+  height: 30px;
+}
+
+#edit {
+  width: 90px;
+  height: 30px;
+  background-color: rgb(186, 204, 228);
+  color: black;
+  border-radius: 20px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+#edit:hover {
+  background-color: rgb(119, 169, 234);
+  transition-duration: 0.2s;
+}
+
+#edit:active {
+  margin-top: 2px;
+  transition-duration: 0.1s;
+}
+
+.post {
+  background-color: white;
+  height: fit-content;
+  margin-left: 0px;
+  border: 1px rgba(29, 155, 240, 1);
+}
+
+#postimg {
+  font-size: 50px;
+  align-items: center;
+  margin-top: 45px;
+  margin-left: 30%;
+  border: 1px solid black;
+  margin-left: 20px;
+  width: 800px;
+  height: fit-content;
+}

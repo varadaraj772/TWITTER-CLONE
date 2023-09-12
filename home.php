@@ -29,11 +29,31 @@ $conn = mysqli_connect("localhost", "root", "", "userinfo");
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css" />
   <script src="twitter.js"></script>
+  <script>
+    const ele = document.querySelectorAll('div.post_avatar')
+    ele.forEach(element => {
+      element.addEventListener('active', () => {
+        document.getElementById('root').style = 'fliter:blur(5px);';
+      })
+    });
+  </script>
+  <style>
+    .post__avatar:active {
+      margin-left: 45%;
+    }
+
+    #photo:active {
+      border-radius: 0%;
+      margin-left: 30%;
+      scale: 5;
+      transition: ease-in-out 0.7s;
+    }
+  </style>
 </head>
 
-<body style=" height:100vh;">
+<body style=" height:100vh;" id="root">
 
-  <div class="container my-3">
+  <div class="container my-3" id="cont">
     <div class="row">
       <div class="col-lg-10 col-md-10">
         <img src="images/Twitter X.png" alt="" srcset="" style="height: 5vh" />
@@ -77,12 +97,13 @@ $conn = mysqli_connect("localhost", "root", "", "userinfo");
         </button>
       </div>
       <!--sidebar ends-->
-      <div class="tweetbox col-8" style=" height : 100vh; overflow-y:scroll;">
+      <div class="tweetbox col-8" style="overflow-y:scroll;">
         <form action="home.php" method="post">
           <span class="input-group-text">
             <?php // RETRIEVE PROFILE PHOTO OF CURRENT USER
             echo profile() ?>
-            <input type="text" name="tprompt" class="form-control" id="floatingInputGroup1" placeholder="Tweet here">
+            <input type="text" name="tprompt" class="form-control" id="floatingInputGroup1" placeholder="Tweet here"
+              required>
           </span>
           <button type="submit" class="sidebar__tweet">
             Tweet
@@ -151,7 +172,7 @@ $conn = mysqli_connect("localhost", "root", "", "userinfo");
           $tweet = $row['twt'];
           $_SESSION['tweet'] = $tweet;
           $id = $row['id'];
-          $src = "<img src='profile/" . $row['profile_pic'] . "' >";
+          $src = "<img src='profile/" . $row['profile_pic'] . "' id='photo' >";
           $user = $row['uname'];
           echo '
           <script>
@@ -160,10 +181,6 @@ $conn = mysqli_connect("localhost", "root", "", "userinfo");
             <div class="post__avatar" id="pic' . $id . '">'
             . $src .
             '</div>
-            <script>
-      document.getElementById("pic' . $id . '").addEventListener("click", () => {
-       
-      });</script>
             <div class="post__body">
               <div class="post__header">
                 <div class="post__headertext">
@@ -183,30 +200,15 @@ $conn = mysqli_connect("localhost", "root", "", "userinfo");
               <p>' . $tweet . '</p>
               <div class="post__footer" id="post__footer' . $id . '">
                 <button class="material-symbols-outlined">repeat</button>
-                <script>
-                var k=document.createElement("button");
-                k.id="' . $id . '";
-                k.className="material-symbols-outlined";
-                k.innerHTML = im1;
-                k.style.border="none";
-                k.style.background="transparent";
-                document.getElementById("post__footer' . $id . '").appendChild(k);
-                </script>
-                <script>
-                var lc=0;
-                document.getElementById("' . $id . '").addEventListener("click", () => {
-                  var like=document.getElementById("' . $id . '");
-                  if(lc<=0){
-                 like.innerHTML =im2;
-                  lc++;
-                  }
-                  else if(lc>0){
-                    like.innerHTML =im1;
-                    lc--;
-                  }
-                });
-                </script>
-                <button class="material-symbols-outlined" id="dl">delete</button>
+                <form action="like.php" method="post">
+                <script>if(lc<=0){
+                  like.innerHTML =im2;
+                   }
+                   else if(lc>0){
+                     like.innerHTML =im1;
+                   }</script>
+                <button class="material-symbols-outlined" type="submit" name="l' . $id . '"><img src="images/heart.png" height="19" width="20"></button></form>
+                <button class="material-symbols-outlined" id="dl">repeat</button>
               </div>
             </div>
           </div>';

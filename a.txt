@@ -1,0 +1,28 @@
+<script>
+              document.getElementById("dl' . $id . '").addEventListener("click", () => {
+                var a=document.getElementById("post").outerHTML="";
+              });</script>
+
+               <script>
+                var k=document.createElement("button");
+                k.id="' . $id . '";
+                k.className="material-symbols-outlined";
+                k.innerHTML = im1;
+                k.style.border="none";
+                k.style.background="transparent";
+                document.getElementById("post__footer' . $id . '").appendChild(k);
+                </script>
+                <script>
+                var lc=0;
+                document.getElementById("' . $id . '").addEventListener("click", () => {
+                  var like=document.getElementById("' . $id . '");
+                  if(lc<=0){
+                 like.innerHTML =im2;
+                  lc++;
+                  }
+                  else if(lc>0){
+                    like.innerHTML =im1;
+                    lc--;
+                  }
+                });
+                </script>

@@ -1,0 +1,2 @@
+MySQL DB Name 		MySQL User Name 		MySQL Password 		MySQL Host Name 	
+if0_35004185_userinfo	if0_35004185		T1qeK5F8Al7Uj		sql303.infinityfree.com

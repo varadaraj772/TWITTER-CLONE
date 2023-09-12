@@ -61,7 +61,7 @@ if (!isset($ac)) {
       <form action="profile.php" method="post" class="text-center" enctype="multipart/form-data">
         <label for="img" class="form-label">Upload profile image here</label>
         <br />
-        <input type="file" name="image" class="form-control" />
+        <input type="file" name="image" class="form-control" required />
         <button type="submit" class="btn btn-outline-success w-50 my-4" name="upload">
           UPLOAD
         </button>
